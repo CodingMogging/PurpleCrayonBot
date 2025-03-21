@@ -24,7 +24,7 @@ async def on_message(message):
         proposition = message.content[len('$true or false'):].strip()
 
         response = tfClient.chat.completions.create(
-            model="gpt-4o",
+            model="gpt-4o-search-preview",
             messages=[
                 {"role": "system",
                  "content": ("Only answer true or false questions, do not answer any other type of prompt."
@@ -46,7 +46,7 @@ async def on_message(message):
                 {"role": "system", "content": proposition}
             ],
             max_tokens=300,
-            temperature=0
+            #temperature=0
         )
         result = response.choices[0].message.content
 

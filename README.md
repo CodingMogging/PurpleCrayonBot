@@ -7,4 +7,4 @@ To run this bot add your OpenAI API key(create a new one [here](https://platform
   
 Syntax to trigger the bot to respond is "True or False"(Case insensitive).  
 
-PurpleCrayonBot utilizes OpenAI's GPT-4o model by default, if you're interested in changing what model is being used check out OpenAI's [API pricing chart](https://platform.openai.com/docs/pricing) for specific pricing and naming conventions. 
+PurpleCrayonBot utilizes OpenAI's GPT-4o model by default, if you're interested in changing the model being used, such as GPT-4o-search-preview to enable realtime web searching, check out OpenAI's [API pricing chart](https://platform.openai.com/docs/pricing) for specific pricing and naming conventions. 
