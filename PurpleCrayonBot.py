@@ -20,8 +20,8 @@ async def on_message(message):
     if message.author == client.user:
         return
 
-    if message.content.lower().startswith('true or false'):
-        proposition = message.content[len('true or false'):].strip()
+    if message.content.lower().startswith('$true or false') | message.content.lower().startswith("$TF"):
+        proposition = message.content[len('$true or false'):].strip()
 
         response = tfClient.chat.completions.create(
             model="gpt-4o",
@@ -35,8 +35,13 @@ async def on_message(message):
                              "like polling data ,expert consensus, research studies or similar. "
                              "Double check that your provided sources exist and are accessible through"
                              "the hyperlinks you provide in markdown format. Begin your response explicitly "
-                             "with either TRUE or FALSE and then provide your explanation and sources,"
-                             "it is of upmost importance that the links you provide are real")},
+                             "with either TRUE, FALSE, or SOMEWHAT TRUE, labeling them with"
+                             " (SUBJECTIVE) or (OBJECTIVE) and then provide your explanation and sources,"
+                             "it is of upmost importance that the links you provide are real."
+                             "If you respond to a non true or false question, simply state your purpose"
+                             "and nothing else, however it is imperative that you use best effort"
+                             "to answer the proposition in a TRUE or FALSE manner if at all possible"
+                             "even if it is nonsensical.")},
 
                 {"role": "system", "content": proposition}
             ],
