@@ -20,7 +20,7 @@ async def on_message(message):
     if message.author == client.user:
         return
 
-    if message.content.lower().startswith('$true or false') | message.content.lower().startswith("$TF"):
+    if message.content.lower().startswith('$true or false'):
         proposition = message.content[len('$true or false'):].strip()
 
         response = tfClient.chat.completions.create(
