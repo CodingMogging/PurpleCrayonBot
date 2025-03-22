@@ -47,7 +47,7 @@ async def on_message(message):
             ],
             max_tokens=300,
             #temperature=0
-            #test
+            #test1
         )
         result = response.choices[0].message.content
 
